@@ -8,23 +8,18 @@ from django import forms
 from nautobot.apps.forms import (
     BootstrapMixin,
     BulkEditNullBooleanSelect,
-    CustomFieldModelBulkEditFormMixin,
-    CustomFieldModelFilterFormMixin,
-    CustomFieldModelFormMixin,
+    DateTimePicker,
+    DynamicModelMultipleChoiceField,
     NautobotBulkEditForm,
-    RelationshipModelFormMixin,
+    NautobotFilterForm,
+    NautobotModelForm,
+    StaticSelect2,
+    StaticSelect2Multiple,
     TagsBulkEditFormMixin,
     add_blank_choice,
 )
 from nautobot.circuits.models import Circuit, Provider
-from nautobot.core.forms import (
-    DateTimePicker,
-    DynamicModelMultipleChoiceField,
-    StaticSelect2,
-    StaticSelect2Multiple,
-)
 from nautobot.core.forms.constants import BOOLEAN_WITH_BLANK_CHOICES
-from nautobot.extras.forms import AddRemoveTagsForm
 
 from .choices import CircuitMaintenanceStatusChoices
 from .models import (
@@ -38,18 +33,18 @@ from .models import (
 BLANK_CHOICE = (("", "---------"),)
 
 
-class CircuitImpactForm(BootstrapMixin, CustomFieldModelFormMixin, RelationshipModelFormMixin):
+class CircuitImpactForm(NautobotModelForm):
     """Form for creating new circuit ID info."""
 
     class Meta:  # noqa: D106 "Missing docstring in public nested class"
         """Metaclass attributes for CircuitMaintenanceCircuitImpactAddForm."""
 
         model = CircuitImpact
-        fields = ["maintenance", "circuit", "impact"]
+        fields = "__all__"
         widgets = {"maintenance": forms.HiddenInput()}
 
 
-class CircuitImpactBulkEditForm(BootstrapMixin, AddRemoveTagsForm, CustomFieldModelBulkEditFormMixin):
+class CircuitImpactBulkEditForm(NautobotBulkEditForm, TagsBulkEditFormMixin):
     """Form for bulk editing Circuit Impact."""
 
     pk = forms.ModelMultipleChoiceField(queryset=CircuitImpact.objects.all(), widget=forms.MultipleHiddenInput)
@@ -58,7 +53,7 @@ class CircuitImpactBulkEditForm(BootstrapMixin, AddRemoveTagsForm, CustomFieldMo
         nullable_fields = ["impact"]
 
 
-class CircuitImpactFilterForm(BootstrapMixin, CustomFieldModelFilterFormMixin):
+class CircuitImpactFilterForm(NautobotFilterForm):
     """Filter Form for CircuitImpactFilterForm."""
 
     model = CircuitImpact
@@ -76,18 +71,18 @@ class CircuitImpactFilterForm(BootstrapMixin, CustomFieldModelFilterFormMixin):
     impact = forms.CharField(max_length=50)
 
 
-class CircuitMaintenanceForm(BootstrapMixin, CustomFieldModelFormMixin, RelationshipModelFormMixin):
+class CircuitMaintenanceForm(NautobotModelForm):
     """Filter Form for CircuitMaintenance instances."""
 
     class Meta:  # noqa: D106 "Missing docstring in public nested class"
         """Metaclass attributes for CircuitMaintenanceAddForm."""
 
         model = CircuitMaintenance
-        fields = ["name", "start_time", "end_time", "description", "status", "ack"]
+        fields = "__all__"
         widgets = {"start_time": DateTimePicker(), "end_time": DateTimePicker()}
 
 
-class CircuitMaintenanceFilterForm(BootstrapMixin, CustomFieldModelFilterFormMixin):
+class CircuitMaintenanceFilterForm(NautobotFilterForm):
     """Form for filtering CircuitMaintenance instances."""
 
     model = CircuitMaintenance
@@ -124,18 +119,18 @@ class CircuitMaintenanceBulkEditForm(TagsBulkEditFormMixin, NautobotBulkEditForm
         nullable_fields = ["description"]
 
 
-class NoteForm(BootstrapMixin, CustomFieldModelFormMixin, RelationshipModelFormMixin):
+class NoteForm(NautobotModelForm):
     """Form for creating new maintenance note."""
 
     class Meta:  # noqa: D106 "Missing docstring in public nested class"
         """Metaclass attributes for NoteForm."""
 
         model = Note
-        fields = ["maintenance", "title", "comment", "level"]
+        fields = "__all__"
         widgets = {"maintenance": forms.HiddenInput()}
 
 
-class NoteBulkEditForm(BootstrapMixin, AddRemoveTagsForm, CustomFieldModelBulkEditFormMixin):
+class NoteBulkEditForm(NautobotBulkEditForm, TagsBulkEditFormMixin):
     """Form for bulk editing Notes."""
 
     pk = forms.ModelMultipleChoiceField(queryset=Note.objects.all(), widget=forms.MultipleHiddenInput)
@@ -147,7 +142,7 @@ class NoteBulkEditForm(BootstrapMixin, AddRemoveTagsForm, CustomFieldModelBulkEd
         nullable_fields = ["level"]
 
 
-class NoteFilterForm(BootstrapMixin, CustomFieldModelFilterFormMixin):
+class NoteFilterForm(NautobotFilterForm):
     """Filter Form for creating new maintenance note."""
 
     model = Note
@@ -162,7 +157,7 @@ class NoteFilterForm(BootstrapMixin, CustomFieldModelFilterFormMixin):
     comment = forms.CharField(max_length=200)
 
 
-class RawNotificationFilterSetForm(BootstrapMixin, CustomFieldModelFilterFormMixin):
+class RawNotificationFilterForm(NautobotFilterForm):
     """Form for filtering Raw Notification instances."""
 
     model = RawNotification
@@ -187,7 +182,7 @@ class NotificationSourceForm(BootstrapMixin, forms.ModelForm):
         fields = ["providers"]
 
 
-class NotificationSourceBulkEditForm(BootstrapMixin, AddRemoveTagsForm, CustomFieldModelBulkEditFormMixin):
+class NotificationSourceBulkEditForm(NautobotBulkEditForm, TagsBulkEditFormMixin):
     """Form for bulk editing NotificationSources."""
 
     pk = forms.ModelMultipleChoiceField(queryset=NotificationSource.objects.all(), widget=forms.MultipleHiddenInput)

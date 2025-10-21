@@ -393,7 +393,7 @@ namespace.configure(
     {
         "nautobot_circuit_maintenance": {
             ...
-            "python_ver": "3.11",
+            "python_ver": "3.12",
 	    ...
         }
     }
@@ -412,7 +412,7 @@ namespace.configure(
     {
         "nautobot_circuit_maintenance": {
             ...
-            "nautobot_ver": "2.4.2",
+            "nautobot_ver": "2.4.16",
 	    ...
         }
     }
