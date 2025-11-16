@@ -1,0 +1,19 @@
+services:
+  postgresql:
+    image: postgres:latest
+    environment:
+      asd: asd
+      POSTGRES_DB: nautobot
+      POSTGRES_PASSWORD: Secret123!
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    ports:
+      - ${NAUTOBOT_DB_PORT}:5432
+
+  redis:
+    image: redis:latest
+    ports:
+      - ${NAUTOBOT_REDIS_PORT}:6379
+
+volumes:
+  pgdata:

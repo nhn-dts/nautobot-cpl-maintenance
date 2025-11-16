@@ -1,0 +1,359 @@
+[
+  {
+    "model": "nautobotbrm.customertype",
+    "pk": "6f7a6b1d-8f64-4e47-9458-a83e06608715",
+    "fields": {
+      "created": "2025-04-10T11:33:18.926Z",
+      "last_updated": "2025-04-10T11:33:18.926Z",
+      "_custom_field_data": {},
+      "name": "RHF IKT-selskap",
+      "description": null,
+      "status": "60251dde-35b4-43ed-857b-eddc0db22e5a"
+    }
+  },
+  {
+    "model": "nautobotbrm.customertype",
+    "pk": "9eadea5c-19e4-4fea-8669-ddddaadf2692",
+    "fields": {
+      "created": "2025-04-10T11:33:00.390Z",
+      "last_updated": "2025-04-10T11:33:00.390Z",
+      "_custom_field_data": {},
+      "name": "Regionalt helseforetak",
+      "description": null,
+      "status": "60251dde-35b4-43ed-857b-eddc0db22e5a"
+    }
+  },
+  {
+    "model": "nautobotbrm.customertype",
+    "pk": "a8dde3d1-e7c7-4909-b545-165f13ed7f91",
+    "fields": {
+      "created": "2025-04-10T11:33:38.620Z",
+      "last_updated": "2025-04-10T11:33:48.984Z",
+      "_custom_field_data": {},
+      "name": "Tredjeparts leverandør",
+      "description": "test",
+      "status": "60251dde-35b4-43ed-857b-eddc0db22e5a"
+    }
+  },
+  {
+    "model": "nautobotbrm.departmenttype",
+    "pk": "cc410cb0-3327-4434-82e9-b43e1aa4636a",
+    "fields": {
+      "created": "2025-07-15T10:43:59.338Z",
+      "last_updated": "2025-07-15T10:43:59.338Z",
+      "_custom_field_data": {},
+      "name": "Hosting",
+      "description": null,
+      "status": "60251dde-35b4-43ed-857b-eddc0db22e5a"
+    }
+  },
+  {
+    "model": "nautobotbrm.departmenttype",
+    "pk": "d79d3641-cc41-4a5f-a6b5-afb4b20eaa05",
+    "fields": {
+      "created": "2025-07-15T10:43:51.857Z",
+      "last_updated": "2025-07-15T10:43:51.858Z",
+      "_custom_field_data": {},
+      "name": "Mobiloperatør",
+      "description": null,
+      "status": "60251dde-35b4-43ed-857b-eddc0db22e5a"
+    }
+  },
+  {
+    "model": "nautobotbrm.departmenttype",
+    "pk": "f6fd1625-cd35-43ac-b47d-f2690d55105e",
+    "fields": {
+      "created": "2025-07-15T10:44:13.130Z",
+      "last_updated": "2025-07-15T10:44:13.130Z",
+      "_custom_field_data": {},
+      "name": "Internet Transit",
+      "description": null,
+      "status": "60251dde-35b4-43ed-857b-eddc0db22e5a"
+    }
+  },
+  {
+    "model": "nautobotbrm.userlocationtype",
+    "pk": "719535a4-aa3d-4528-92d5-0d4e04c0c209",
+    "fields": {
+      "created": "2025-07-15T10:43:09.927Z",
+      "last_updated": "2025-07-15T10:43:09.927Z",
+      "_custom_field_data": {},
+      "name": "Sykehus",
+      "description": null,
+      "status": "60251dde-35b4-43ed-857b-eddc0db22e5a"
+    }
+  },
+  {
+    "model": "nautobotbrm.userlocationtype",
+    "pk": "7888fa93-5e7d-48e3-8ee0-9cd3cd4e9d3a",
+    "fields": {
+      "created": "2025-07-15T10:43:17.604Z",
+      "last_updated": "2025-07-15T10:43:17.604Z",
+      "_custom_field_data": {},
+      "name": "Ambulansestasjon",
+      "description": null,
+      "status": "60251dde-35b4-43ed-857b-eddc0db22e5a"
+    }
+  },
+  {
+    "model": "nautobotbrm.contacttype",
+    "pk": "35d30524-f297-418a-a261-c08d334763d2",
+    "fields": {
+      "created": "2025-04-10T11:48:53.090Z",
+      "last_updated": "2025-04-10T11:48:53.090Z",
+      "_custom_field_data": {},
+      "name": "Lokal kontakt leveranse",
+      "description": "test",
+      "status": "60251dde-35b4-43ed-857b-eddc0db22e5a",
+      "organization_type": "customer"
+    }
+  },
+  {
+    "model": "nautobotbrm.contacttype",
+    "pk": "59524415-6252-4bce-a6a1-aa520cc33807",
+    "fields": {
+      "created": "2025-04-10T11:47:56.705Z",
+      "last_updated": "2025-04-10T11:47:56.705Z",
+      "_custom_field_data": {},
+      "name": "Person",
+      "description": null,
+      "status": "60251dde-35b4-43ed-857b-eddc0db22e5a",
+      "organization_type": "supplier"
+    }
+  },
+  {
+    "model": "nautobotbrm.contacttype",
+    "pk": "79d9eca9-95e7-49f2-80ee-cb0ca8fa744c",
+    "fields": {
+      "created": "2025-04-10T11:48:06.993Z",
+      "last_updated": "2025-04-10T11:48:06.993Z",
+      "_custom_field_data": {},
+      "name": "Forespørsel",
+      "description": null,
+      "status": "60251dde-35b4-43ed-857b-eddc0db22e5a",
+      "organization_type": "customer"
+    }
+  },
+  {
+    "model": "nautobotbrm.contacttype",
+    "pk": "a2c64ae9-8b6c-4d8a-8b8b-7e143789d8d4",
+    "fields": {
+      "created": "2025-04-10T11:48:22.656Z",
+      "last_updated": "2025-04-10T11:48:22.656Z",
+      "_custom_field_data": {},
+      "name": "Feilmelding",
+      "description": "test",
+      "status": "60251dde-35b4-43ed-857b-eddc0db22e5a",
+      "organization_type": "customer"
+    }
+  },
+  {
+    "model": "nautobotbrm.organization",
+    "pk": "0f5b7f67-5c2d-4685-9e17-7c5f09f1eb1a",
+    "fields": {
+      "created": "2025-04-10T11:52:27.323Z",
+      "last_updated": "2025-04-10T11:52:27.323Z",
+      "_custom_field_data": {},
+      "organization_number": "33333333",
+      "name": "Norsk Helsenett",
+      "is_customer": true,
+      "is_supplier": true,
+      "customer_type": "9eadea5c-19e4-4fea-8669-ddddaadf2692",
+      "invoice_address": null,
+      "visiting_address": null,
+      "url": null,
+      "description": null,
+      "status": "60251dde-35b4-43ed-857b-eddc0db22e5a"
+    }
+  },
+  {
+    "model": "nautobotbrm.organization",
+    "pk": "49516249-ae52-4d70-bbb1-6c1f4d832811",
+    "fields": {
+      "created": "2025-04-10T11:50:22.597Z",
+      "last_updated": "2025-04-10T11:50:22.597Z",
+      "_custom_field_data": {},
+      "organization_number": "11111111",
+      "name": "Telenor AS",
+      "is_customer": false,
+      "is_supplier": true,
+      "customer_type": null,
+      "invoice_address": "Testveien 32, 7066 TRONDHEIM",
+      "visiting_address": "Testveien 32, 7066 TRONDHEIM",
+      "url": "https://stackoverflow.com/questions/14541074/empty-label-choicefield-django",
+      "description": "test",
+      "status": "60251dde-35b4-43ed-857b-eddc0db22e5a"
+    }
+  },
+  {
+    "model": "nautobotbrm.organization",
+    "pk": "bebdf758-133d-46e5-88a3-ade1dc3770c1",
+    "fields": {
+      "created": "2025-04-24T08:24:47.769Z",
+      "last_updated": "2025-04-24T08:24:47.769Z",
+      "_custom_field_data": {},
+      "organization_number": "823742938",
+      "name": "HEMIT",
+      "is_customer": true,
+      "is_supplier": false,
+      "customer_type": "6f7a6b1d-8f64-4e47-9458-a83e06608715",
+      "invoice_address": null,
+      "visiting_address": null,
+      "url": null,
+      "description": null,
+      "status": "60251dde-35b4-43ed-857b-eddc0db22e5a"
+    }
+  },
+  {
+    "model": "nautobotbrm.organization",
+    "pk": "d49ce9b4-8822-433b-8a66-afea1e30ddbd",
+    "fields": {
+      "created": "2025-04-10T11:50:58.685Z",
+      "last_updated": "2025-04-10T11:50:58.685Z",
+      "_custom_field_data": {},
+      "organization_number": "22222222",
+      "name": "Sykehuspartner AS",
+      "is_customer": true,
+      "is_supplier": false,
+      "customer_type": "9eadea5c-19e4-4fea-8669-ddddaadf2692",
+      "invoice_address": "Testveien 32, 7066 TRONDHEIM",
+      "visiting_address": "Testveien 32, 7066 TRONDHEIM",
+      "url": "https://stackoverflow.com/questions/14541074/empty-label-choicefield-django",
+      "description": "test",
+      "status": "60251dde-35b4-43ed-857b-eddc0db22e5a"
+    }
+  },
+  {
+    "model": "nautobotbrm.contact",
+    "pk": "34307b8e-a6cf-4652-8d90-c811a82d01b1",
+    "fields": {
+      "created": "2025-04-10T11:54:11.202Z",
+      "last_updated": "2025-04-10T11:54:11.202Z",
+      "_custom_field_data": {},
+      "organization": "d49ce9b4-8822-433b-8a66-afea1e30ddbd",
+      "name": "Ola Nordmann",
+      "email": "ola.nordmann@test.no",
+      "phone_country_code": "47",
+      "phone_number": "43434343",
+      "url": "https://stackoverflow.com/questions/14541074/empty-label-choicefield-django",
+      "description": null,
+      "status": "60251dde-35b4-43ed-857b-eddc0db22e5a",
+      "contact_types": [
+        "35d30524-f297-418a-a261-c08d334763d2",
+        "79d9eca9-95e7-49f2-80ee-cb0ca8fa744c"
+      ],
+      "tags": []
+    }
+  },
+  {
+    "model": "nautobotbrm.contact",
+    "pk": "55d44fbd-7b78-458c-b6cf-663d50c3b08c",
+    "fields": {
+      "created": "2025-04-24T08:25:24.337Z",
+      "last_updated": "2025-04-24T08:25:24.337Z",
+      "_custom_field_data": {},
+      "organization": "bebdf758-133d-46e5-88a3-ade1dc3770c1",
+      "name": "Ole Marius Inderhaug",
+      "email": "asda@adas.no",
+      "phone_country_code": "123",
+      "phone_number": "123",
+      "url": null,
+      "description": null,
+      "status": "60251dde-35b4-43ed-857b-eddc0db22e5a",
+      "contact_types": ["35d30524-f297-418a-a261-c08d334763d2"],
+      "tags": []
+    }
+  },
+  {
+    "model": "nautobotbrm.contact",
+    "pk": "a8add350-c207-4037-9001-05b3d092d0fe",
+    "fields": {
+      "created": "2025-07-15T13:44:40.702Z",
+      "last_updated": "2025-07-15T13:44:40.702Z",
+      "_custom_field_data": {},
+      "organization": "0f5b7f67-5c2d-4685-9e17-7c5f09f1eb1a",
+      "name": "asd",
+      "email": "asd",
+      "phone_country_code": "asd",
+      "phone_number": "asd",
+      "url": null,
+      "description": null,
+      "status": "60251dde-35b4-43ed-857b-eddc0db22e5a",
+      "contact_types": ["59524415-6252-4bce-a6a1-aa520cc33807"],
+      "tags": []
+    }
+  },
+  {
+    "model": "nautobotbrm.contact",
+    "pk": "acb1ac45-e62e-4919-bd96-1d1975811799",
+    "fields": {
+      "created": "2025-07-15T13:41:20.375Z",
+      "last_updated": "2025-07-15T13:41:20.375Z",
+      "_custom_field_data": {},
+      "organization": "49516249-ae52-4d70-bbb1-6c1f4d832811",
+      "name": "asd",
+      "email": "asd",
+      "phone_country_code": "12",
+      "phone_number": "123",
+      "url": null,
+      "description": "asd",
+      "status": "60251dde-35b4-43ed-857b-eddc0db22e5a",
+      "contact_types": ["a2c64ae9-8b6c-4d8a-8b8b-7e143789d8d4"],
+      "tags": []
+    }
+  },
+  {
+    "model": "nautobotbrm.contact",
+    "pk": "b7fb6185-6b3f-4553-98ef-1d3bbc412a0d",
+    "fields": {
+      "created": "2025-04-10T11:55:47.159Z",
+      "last_updated": "2025-04-10T11:55:47.159Z",
+      "_custom_field_data": {},
+      "organization": "49516249-ae52-4d70-bbb1-6c1f4d832811",
+      "name": "Kari Nordmann",
+      "email": "kari.nordmann@test.no",
+      "phone_country_code": "47",
+      "phone_number": "43344343",
+      "url": null,
+      "description": null,
+      "status": "60251dde-35b4-43ed-857b-eddc0db22e5a",
+      "contact_types": [],
+      "tags": []
+    }
+  },
+  {
+    "model": "nautobotbrm.contact",
+    "pk": "f4079d6f-a363-444b-99fa-6bafaaa23727",
+    "fields": {
+      "created": "2025-04-11T06:09:14.757Z",
+      "last_updated": "2025-04-11T06:09:14.757Z",
+      "_custom_field_data": {},
+      "organization": "0f5b7f67-5c2d-4685-9e17-7c5f09f1eb1a",
+      "name": "test",
+      "email": "pernik@test.no",
+      "phone_country_code": "47",
+      "phone_number": "23323223",
+      "url": "testurl",
+      "description": "test",
+      "status": "60251dde-35b4-43ed-857b-eddc0db22e5a",
+      "contact_types": ["79d9eca9-95e7-49f2-80ee-cb0ca8fa744c"],
+      "tags": []
+    }
+  },
+  {
+    "model": "nautobotbrm.department",
+    "pk": "c9af6d16-02c7-4f6d-acad-1a3140028207",
+    "fields": {
+      "created": "2025-07-15T10:47:56.104Z",
+      "last_updated": "2025-07-15T10:47:56.104Z",
+      "_custom_field_data": {},
+      "organization": "49516249-ae52-4d70-bbb1-6c1f4d832811",
+      "department_type": "d79d3641-cc41-4a5f-a6b5-afb4b20eaa05",
+      "name": "Telenor Mobiloperatør Avdeling",
+      "url": "https://stackoverflow.com/questions/14541074/empty-label-choicefield-django",
+      "description": null,
+      "status": "60251dde-35b4-43ed-857b-eddc0db22e5a",
+      "contacts": ["b7fb6185-6b3f-4553-98ef-1d3bbc412a0d"]
+    }
+  }
+]

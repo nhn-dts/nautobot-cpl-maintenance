@@ -10,19 +10,20 @@ repository = "https://github.com/nautobot/nautobot-app-circuit-maintenance"
 documentation = "https://docs.nautobot.com/projects/circuit-maintenance/en/latest/"
 keywords = ["nautobot", "nautobot-app", "nautobot-plugin"]
 classifiers = [
-    "Intended Audience :: Developers",
-    "Development Status :: 5 - Production/Stable",
-    "Programming Language :: Python :: 3",
-    "Programming Language :: Python :: 3.10",
-    "Programming Language :: Python :: 3.11",
-    "Programming Language :: Python :: 3.12",
+  "Intended Audience :: Developers",
+  "Development Status :: 5 - Production/Stable",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
 ]
-packages = [
-    { include = "nautobot_circuit_maintenance" },
-]
+packages = [{ include = "nautobot_circuit_maintenance" }]
 include = [
-    # Poetry by default will exclude files that are in .gitignore
-    { path = "nautobot_circuit_maintenance/static/nautobot_circuit_maintenance/docs/**/*", format = ["sdist", "wheel"] }
+  # Poetry by default will exclude files that are in .gitignore
+  { path = "nautobot_circuit_maintenance/static/nautobot_circuit_maintenance/docs/**/*", format = [
+    "sdist",
+    "wheel",
+  ] },
 ]
 
 [tool.poetry.dependencies]
@@ -36,11 +37,13 @@ exchangelib = { version = ">=5.1.0", optional = true }
 google-api-python-client = "^2.9.0"
 google-auth-httplib2 = "^0.1.0"
 google-auth-oauthlib = "^0.5.0"
-markdown = "!=3.3.5"  # Added due an issue with Markdown 3.3.5
-nautobot-capacity-metrics = {version = ">=3.0.0", optional = true }
+markdown = "!=3.3.5"                                                 # Added due an issue with Markdown 3.3.5
+nautobot-capacity-metrics = { version = ">=3.0.0", optional = true }
 pydantic = ">=1.10.4,<3"
 
 [tool.poetry.group.dev.dependencies]
+nautobotbrm = { git = "ssh://git@github.com/nhn-dts/Nautobot-BRM.git", rev = "8e857e5" }
+nautobottil = { git = "ssh://git@github.com/nhn-dts/Nautobot-TIL.git", rev = "1413abd" }
 coverage = "*"
 # Currently pinned to <6.0.0 due to https://github.com/django-commons/django-debug-toolbar/issues/2168
 django-debug-toolbar = "<6.0.0"
@@ -61,7 +64,7 @@ to-json-schema = "*"
 jsonschema = "*"
 djlint = ">=1.36.4,<2.0.0"
 djhtml = ">=3.0.8,<4.0.0"
-tomli = { version = "*", markers = "python_version < '3.11'" }  # tomli is included in the stdlib as of Python 3.11
+tomli = { version = "*", markers = "python_version < '3.11'" } # tomli is included in the stdlib as of Python 3.11
 
 [tool.poetry.group.docs.dependencies]
 # Render custom markdown for version added/changed/remove notes
@@ -77,16 +80,9 @@ mkdocs-autorefs = "1.2.0"
 griffe = "1.1.1"
 
 [tool.poetry.extras]
-ews = [
-    "exchangelib",
-]
-capacity_metrics = [
-    "nautobot-capacity-metrics",
-]
-all = [
-    "exchangelib",
-    "nautobot-capacity-metrics",
-]
+ews = ["exchangelib"]
+capacity_metrics = ["nautobot-capacity-metrics"]
+all = ["exchangelib", "nautobot-capacity-metrics"]
 
 
 [tool.pylint.master]
@@ -123,52 +119,47 @@ target-version = "py39"
 
 [tool.ruff.lint]
 select = [
-    "D",  # pydocstyle
-    "F", "E", "W",  # flake8
-    "S",  # bandit
-    "I",  # isort
+  "D", # pydocstyle
+  "F",
+  "E",
+  "W", # flake8
+  "S", # bandit
+  "I", # isort
 ]
 ignore = [
-    # warning: `one-blank-line-before-class` (D203) and `no-blank-line-before-class` (D211) are incompatible.
-    "D203", # 1 blank line required before class docstring
+  # warning: `one-blank-line-before-class` (D203) and `no-blank-line-before-class` (D211) are incompatible.
+  "D203", # 1 blank line required before class docstring
 
-    # D212 is enabled by default in google convention, and complains if we have a docstring like:
-    # """
-    # My docstring is on the line after the opening quotes instead of on the same line as them.
-    # """
-    # We've discussed and concluded that we consider this to be a valid style choice.
-    "D212", # Multi-line docstring summary should start at the first line
-    "D213", # Multi-line docstring summary should start at the second line
+  # D212 is enabled by default in google convention, and complains if we have a docstring like:
+  # """
+  # My docstring is on the line after the opening quotes instead of on the same line as them.
+  # """
+  # We've discussed and concluded that we consider this to be a valid style choice.
+  "D212", # Multi-line docstring summary should start at the first line
+  "D213", # Multi-line docstring summary should start at the second line
 
-    # Produces a lot of issues in the current codebase.
-    "D401", # First line of docstring should be in imperative mood
-    "D407", # Missing dashed underline after section
-    "D416", # Section name ends in colon
-    "E501", # Line too long
+  # Produces a lot of issues in the current codebase.
+  "D401", # First line of docstring should be in imperative mood
+  "D407", # Missing dashed underline after section
+  "D416", # Section name ends in colon
+  "E501", # Line too long
 ]
 
 [tool.ruff.lint.pydocstyle]
 convention = "google"
 
 [tool.ruff.lint.per-file-ignores]
-"nautobot_circuit_maintenance/migrations/*" = [
-    "D",
-]
-"nautobot_circuit_maintenance/tests/*" = [
-    "D",
-    "S"
-]
+"nautobot_circuit_maintenance/migrations/*" = ["D"]
+"nautobot_circuit_maintenance/tests/*" = ["D", "S"]
 
 [tool.coverage.run]
 disable_warnings = ["already-imported"]
 relative_files = true
 omit = [
-    # Skip Tests
-    "*/tests/*",
+  # Skip Tests
+  "*/tests/*",
 ]
-include = [
-    "nautobot_circuit_maintenance/*",
-]
+include = ["nautobot_circuit_maintenance/*"]
 
 [tool.pymarkdown]
 plugins.selectively_enable_rules = true
@@ -240,5 +231,5 @@ showcontent = true
 
 [tool.djlint]
 ignore = "H005,H006,H008,H011,H012,H013,H014,H015,H016,H019,H020,H021,H022,H023,H025,H026,H030,H031,H037"
-profile="django"
+profile = "django"
 extend_exclude = "docs/,nautobot_circuit_maintenance/static/"
