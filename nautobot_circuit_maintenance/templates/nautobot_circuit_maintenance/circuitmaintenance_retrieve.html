@@ -53,7 +53,7 @@
 {% block content_full_width_page %}
     <div class="panel panel-default">
         <div class="panel-heading">
-            <strong>Circuits</strong>
+            <strong>Circuit Physical Lines</strong>
             <div class="pull-right noprint">
             {% if perms.nautobot_circuit_maintenance.add_circuitmaintenance %}
                 <a href="{% url 'plugins:nautobot_circuit_maintenance:circuitimpact_add' %}?maintenance={{ object.id }}&return_url={{ object.get_absolute_url }}" >
@@ -74,6 +74,11 @@
                     <th>Impact</th>
                     <th>Name</th>
                     <th>Status</th>
+                    <th>Device A</th>
+                    <th>Device A Location</th>
+                    <th>Device B</th>
+                    <th>Device B Location</th>
+                    <th>Technical Comment</th>
                 </tr>
                 {% for circuit in circuits %}
                 <tr>
@@ -92,25 +97,27 @@
                         {% endif %}
                     </td>
                     <td>
-                    {% if circuit.circuit.circuit_termination_a.location %}
-                        <a href="{{ circuit.circuit.circuit_termination_a.location.get_absolute_url }}">{{ circuit.circuit.circuit_termination_a.location }}</a>
-                    {% elif circuit.circuit.circuit_termination_a.provider_network %}
-                        <a href="{{ circuit.circuit.circuit_termination_a.provider_network.get_absolute_url }}">{{ circuit.circuit.circuit_termination_a.provider_network }}</a>
-                    {% else %}
-                        <a href="{{ circuit.circuit.circuit_termination_a.location.get_absolute_url }}">{{ circuit.circuit.circuit_termination_a.location }}</a>
+                    {% if circuit.circuit.device_a %}
+                        <a href="{{ circuit.circuit.device_a.get_absolute_url }}">{{ circuit.circuit.device_a}}</a>
                     {% endif %}
                     </td>
                     <td>
-                    {% if circuit.circuit.circuit_termination_z.location %}
-                        <a href="{{ circuit.circuit.circuit_termination_z.location.get_absolute_url }}">{{ circuit.circuit.circuit_termination_z.location }}</a>
-                    {% elif circuit.circuit.circuit_termination_z.provider_network %}
-                        <a href="{{ circuit.circuit.circuit_termination_z.provider_network.get_absolute_url }}">{{ circuit.circuit.circuit_termination_z.provider_network }}</a>
-                    {% else %}
-                        <a href="{{ circuit.circuit.circuit_termination_z.location.get_absolute_url }}">{{ circuit.circuit.circuit_termination_z.location }}</a>
+                    {% if circuit.circuit.device_a.location %}
+                        <a href="{{ circuit.circuit.device_a.location.get_absolute_url }}">{{ circuit.circuit.device_a.location }}</a>
                     {% endif %}
                     </td>
                     <td>
-                        {{ circuit.circuit.description }}
+                    {% if circuit.circuit.device_b %}
+                        <a href="{{ circuit.circuit.device_b.get_absolute_url }}">{{ circuit.circuit.device_b}}</a>
+                    {% endif %}
+                    </td>
+                    <td>
+                    {% if circuit.circuit.device_b.location %}
+                        <a href="{{ circuit.circuit.device_b.location.get_absolute_url }}">{{ circuit.circuit.device_b.location }}</a>
+                    {% endif %}
+                    </td>
+                    <td>
+                        {{ circuit.circuit.technical_comment }}
                     </td>
                 </tr>
                 {% endfor %}
