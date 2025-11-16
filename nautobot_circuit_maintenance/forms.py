@@ -20,6 +20,7 @@ from nautobot.apps.forms import (
 )
 from nautobot.circuits.models import Circuit, Provider
 from nautobot.core.forms.constants import BOOLEAN_WITH_BLANK_CHOICES
+from nautobottil.models import CircuitPhysicalLine
 
 from .choices import CircuitMaintenanceStatusChoices
 from .models import (
@@ -64,7 +65,7 @@ class CircuitImpactFilterForm(NautobotFilterForm):
         required=False,
     )
     circuit = DynamicModelMultipleChoiceField(
-        queryset=Circuit.objects.all(),
+        queryset=CircuitPhysicalLine.objects.all(),
         to_field_name="pk",
         required=False,
     )

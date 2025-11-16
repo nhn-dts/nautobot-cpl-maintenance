@@ -72,30 +72,23 @@
                 <tr>
                     <th>ID</th>
                     <th>Impact</th>
-                    <th>Provider</th>
-                    <th>Type</th>
+                    <th>Name</th>
                     <th>Status</th>
-                    <th>A Side</th>
-                    <th>Z Side</th>
-                    <th>Description</th>
                 </tr>
                 {% for circuit in circuits %}
                 <tr>
                     <td>
-                        <a href="{{ circuit.circuit.get_absolute_url }}">{{ circuit.circuit.cid }}</a>
+                        <a href="{{ circuit.circuit.get_absolute_url }}">{{ circuit.circuit.cpl_id }}</a>
                     </td>
                     <td>
                         {{ circuit.impact }}
                     </td>
                     <td>
-                        <a href="{{ circuit.circuit.provider.get_absolute_url }}">{{ circuit.circuit.provider }}</a>
-                    </td>
-                    <td>
-                        <a href="{{ circuit.circuit.circuit_type.get_absolute_url }}">{{ circuit.circuit.circuit_type }}</a>
+                        {{ circuit.circuit }}
                     </td>
                     <td>
                         {% if circuit.circuit.status %}
-                            <span class="label" style="color: {{circuit.circuit.get_status_color}}; background-color: #{{circuit.circuit.get_status_color}}">{{ circuit.circuit.get_status_display }}</span>
+                            <span class="label" style="color: {{circuit.circuit.get_status_color}}; background-color: #{{circuit.circuit.get_status_color}}">{{ circuit.circuit.status }}</span>
                         {% endif %}
                     </td>
                     <td>

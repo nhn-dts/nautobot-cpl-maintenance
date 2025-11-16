@@ -13,6 +13,9 @@ from django.urls import reverse
 from nautobot.circuits.models import Circuit, Provider
 from nautobot.core.models.generics import OrganizationalModel, PrimaryModel
 from nautobot.extras.utils import extras_features
+from nautobotbrm.models import Department
+from nautobottil import models as tilmodels
+import nautobottil
 
 from .choices import CircuitImpactChoices, CircuitMaintenanceStatusChoices, NoteLevelChoices
 
@@ -55,12 +58,12 @@ class CircuitMaintenance(PrimaryModel):
     @property
     def circuits(self):
         """Queryset of Circuit records associated with this CircuitMaintenance."""
-        return Circuit.objects.filter(circuitimpact__maintenance=self)
+        return tilmodels.CircuitPhysicalLine.objects.filter(circuitimpact__maintenance=self)
 
     @property
     def providers(self):
         """Queryset of Provider records associated with this CircuitMaintenance."""
-        return Provider.objects.filter(circuits__circuitimpact__maintenance=self)
+        return Department.objects.filter(circuitphysicalline__circuitimpact__maintenance=self)
 
     class Meta:  # noqa: D106 "Missing docstring in public nested class"
         ordering = ["start_time"]
@@ -98,7 +101,7 @@ class CircuitImpact(OrganizationalModel):
     """Model for Circuit Impact."""
 
     maintenance = models.ForeignKey(CircuitMaintenance, on_delete=models.CASCADE)
-    circuit = models.ForeignKey(Circuit, on_delete=models.CASCADE)
+    circuit = models.ForeignKey(tilmodels.CircuitPhysicalLine, on_delete=models.CASCADE)
     impact = models.CharField(
         default=CircuitImpactChoices.OUTAGE,
         max_length=50,
