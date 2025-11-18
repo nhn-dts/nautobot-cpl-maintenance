@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "nautobot-circuit-maintenance"
-version = "1.0.0"
+version = "1.1.0"
 description = "Nautobot app to automatically handle Circuit Maintenances Notifications"
 authors = ["Network to Code, LLC <opensource@networktocode.com>"]
 license = "Apache-2.0"
@@ -32,13 +32,13 @@ python = ">=3.10,<3.13"
 nautobot = ">=2.4.20,<3.0.0"
 circuit-maintenance-parser = "^2.0.0"
 django-cryptography = "^1.1"
-exchangelib = { version = "1.0.0", optional = true }
+exchangelib = { version = "1.1.0", optional = true }
 # TODO: gmail-auth should be optional.
 google-api-python-client = "^2.9.0"
 google-auth-httplib2 = "^0.1.0"
 google-auth-oauthlib = "^0.5.0"
 markdown = "!=3.3.5"                                                 # Added due an issue with Markdown 3.3.5
-nautobot-capacity-metrics = { version = "1.0.0", optional = true }
+nautobot-capacity-metrics = { version = "1.1.0", optional = true }
 pydantic = ">=1.10.4,<3"
 
 [tool.poetry.group.dev.dependencies]
@@ -64,7 +64,7 @@ to-json-schema = "*"
 jsonschema = "*"
 djlint = ">=1.36.4,<2.0.0"
 djhtml = ">=3.0.8,<4.0.0"
-tomli = { version = "1.0.0" } # tomli is included in the stdlib as of Python 3.11
+tomli = { version = "1.1.0" } # tomli is included in the stdlib as of Python 3.11
 
 [tool.poetry.group.docs.dependencies]
 # Render custom markdown for version added/changed/remove notes
@@ -115,7 +115,7 @@ notes = """,
 
 [tool.ruff]
 line-length = 120
-target-version = "1.0.0"
+target-version = "1.1.0"
 
 [tool.ruff.lint]
 select = [
