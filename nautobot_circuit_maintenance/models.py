@@ -54,7 +54,7 @@ class CircuitMaintenance(PrimaryModel):
         choices=CircuitMaintenanceStatusChoices,
     )
     ack = models.BooleanField(default=False)
-    external_reference = models.CharField(max_length=50, blank=True)
+    external_reference = models.CharField(max_length=50, blank=True, unique=True)
 
     @property
     def circuits(self):
