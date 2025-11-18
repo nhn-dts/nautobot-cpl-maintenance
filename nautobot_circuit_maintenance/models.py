@@ -4,6 +4,7 @@ import logging
 import pickle  # nosec
 from datetime import datetime, timezone
 
+import nautobottil
 from django.conf import settings
 from django.core.exceptions import ValidationError
 from django.db import models
@@ -15,7 +16,6 @@ from nautobot.core.models.generics import OrganizationalModel, PrimaryModel
 from nautobot.extras.utils import extras_features
 from nautobotbrm.models import Department
 from nautobottil import models as tilmodels
-import nautobottil
 
 from .choices import CircuitImpactChoices, CircuitMaintenanceStatusChoices, NoteLevelChoices
 
@@ -54,6 +54,7 @@ class CircuitMaintenance(PrimaryModel):
         choices=CircuitMaintenanceStatusChoices,
     )
     ack = models.BooleanField(default=False)
+    external_reference = models.CharField(max_length=50, blank=True)
 
     @property
     def circuits(self):
